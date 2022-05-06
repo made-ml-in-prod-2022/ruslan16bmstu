@@ -1,9 +1,9 @@
 import numpy as np
 import sys
+sys.path.append("./ml_project")
+
 
 from features.build_features import build_transformer, extract_target, extract_features
-
-sys.path.append("./ml_project")
 
 
 def test_extract_target(dataset, feature_params):

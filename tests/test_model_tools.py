@@ -2,10 +2,9 @@ import pytest
 from sklearn.linear_model import LogisticRegression
 import os
 import sys
+sys.path.append("./ml_project")
 
 from models.model_tools import train_model, serialize_model, read_model
-
-sys.path.append("./ml_project")
 
 
 @pytest.fixture()

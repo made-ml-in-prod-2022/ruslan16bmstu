@@ -1,9 +1,9 @@
 import os
 import sys
+sys.path.append("./ml_project")
+
 
 from predict import predict
-
-sys.path.append("./ml_project")
 
 
 def test_predict(training_pipeline_params, dataset_without_target):

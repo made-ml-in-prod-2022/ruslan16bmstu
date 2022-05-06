@@ -2,6 +2,10 @@ import pytest
 import pandas as pd
 from faker_generator import gen_fake_dataset
 
+import sys
+sys.path.append("./ml_project")
+
+
 from features import extract_target, build_transformer
 from data.read_params import (
     FeatureParams,
@@ -10,10 +14,6 @@ from data.read_params import (
     TrainingPipelineParams,
     SplittingParams,
 )
-
-import sys
-
-sys.path.append("./ml_project")
 
 
 @pytest.fixture()
