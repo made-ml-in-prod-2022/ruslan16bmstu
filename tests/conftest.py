@@ -1,4 +1,5 @@
 import pytest
+import os
 import pandas as pd
 from faker_generator import gen_fake_dataset
 
@@ -6,6 +7,7 @@ import sys
 sys.path.append("./ml_project")
 
 
+from train import train
 from features import extract_target, build_transformer
 from data.read_params import (
     FeatureParams,
@@ -76,3 +78,16 @@ def training_pipeline_params(
         model=training_params,
         downloading_params=download_params,
     )
+
+
+@pytest.fixture()
+def dummy_pipeline(dataset, training_pipeline_params):
+    if os.path.isfile(training_pipeline_params.downloading_params.file_path):
+        os.remove(training_pipeline_params.downloading_params.file_path)
+    if os.path.isfile(training_pipeline_params.metrics_path):
+        os.remove(training_pipeline_params.metrics_path)
+    if os.path.isfile(training_pipeline_params.output_model_path):
+        os.remove(training_pipeline_params.output_model_path)
+
+    dataset.to_csv(training_pipeline_params.downloading_params.file_path)
+    train(training_pipeline_params)

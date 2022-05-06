@@ -6,7 +6,8 @@ sys.path.append("./ml_project")
 from predict import predict
 
 
-def test_predict(training_pipeline_params, dataset_without_target):
+def test_predict(dummy_pipeline, training_pipeline_params, dataset_without_target):
+    dummy_pipeline
     features_path = "tests/artifacts/features.csv"
     prediction_path = "tests/artifacts/prediction.txt"
 
