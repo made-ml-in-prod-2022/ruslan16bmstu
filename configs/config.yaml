@@ -9,7 +9,7 @@ metrics_path: ../reports/report.json
 output_model_path: ../artifacts/model.pkl
 downloading_params:
   url: https://raw.githubusercontent.com/ruslan16bmstu/ML/main/heart_cleveland_upload.csv
-  file_path: ../ml_project/raw/heart_cleveland_upload.csv
+  file_path: ../raw/heart_cleveland_upload.csv
 splitting_params:
   val_size: 0.2
   random_state: 42

@@ -2,7 +2,7 @@
 ## Использование
 ### Обучение модели
 ```
-python3 ml_project/train.py                — по умалчанию обучается логистическая регрессия            
+python3 ml_project/train.py                — по умолчанию обучается логистическая регрессия            
 python3 ml_project/train.py model=busting  — обучить градиентный бустинг
 python3 ml_project/train.py model=logreg   — обучить логистическую регрессию
 ```
