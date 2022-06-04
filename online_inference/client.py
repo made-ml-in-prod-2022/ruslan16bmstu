@@ -6,7 +6,7 @@ import click
 @click.command()
 @click.option("--host", default="0.0.0.0")
 @click.option("--port", default=8000)
-@click.option("--data_path", default="sample_data/features.csv")
+@click.option("--data_path", default="online_inference/sample_data/features.csv")
 def main(data_path, host, port):
     data = pd.read_csv(data_path, index_col=0)
     data = data.tail(10)

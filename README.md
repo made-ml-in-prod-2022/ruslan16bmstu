@@ -10,6 +10,21 @@ python3 ml_project/train.py model=logreg   — обучить логистиче
 ```
 python3 ml_project/predict.py artifacts/model.pkl <features path> <prediction path>
 ```
+## Online inference
+### Локальная сборка и запуск docker-образа
+```
+docker build -t hw2:v1 .
+docker run -p 8000:8000 hw2:v1
+```
+### Импорт и запуск docker-образа из dockerhub
+```
+docker pull ruslan16/ml_in_prod_2022:latest
+docker run -p 8000:8000 ruslan16/ml_in_prod_2022:latest
+```
+### Запуск скрипта для работы с сервисом
+```
+python online_inference/client.py
+```
 ## Структура проекта
 ```
 ├── artifacts           <- Место сохранения обученной модели 
