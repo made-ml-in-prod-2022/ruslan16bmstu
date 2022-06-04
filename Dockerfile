@@ -6,7 +6,6 @@ COPY online_inference/model_object/model.pkl /model.pkl
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-
 WORKDIR .
 
 ENV MODEL_PATH="/model.pkl"
