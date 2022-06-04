@@ -4,3 +4,4 @@ __pycache__
 *.json
 .hydra
 *.txt
+!online_inference/model_object/model.pkl
