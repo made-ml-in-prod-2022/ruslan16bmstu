@@ -2,23 +2,23 @@
 ## Использование
 ### Обучение модели
 ```
-python3 ml_project/train.py                — по умолчанию обучается логистическая регрессия            
-python3 ml_project/train.py model=busting  — обучить градиентный бустинг
-python3 ml_project/train.py model=logreg   — обучить логистическую регрессию
+python3 -m ml_project.train                — по умолчанию обучается логистическая регрессия            
+python3 -m ml_project.train model=busting  — обучить градиентный бустинг
+python3 -m ml_project.train model=logreg   — обучить логистическую регрессию
 ```
 ### Получение предсказаний
 ```
-python3 ml_project/predict.py artifacts/model.pkl <features path> <prediction path>
+python3 -m ml_project.predict artifacts/model.pkl <features path> <prediction path>
 ```
 ## Структура проекта
 ```
-├── artifacts           <- Место сохранения обученной модели 
+├── artifacts           <- Место сохранения обученной модели
+├── raw                 <- Место сохранения датасета для обучения 
 ├── configs             <- Конфигурационные файлы
 ├── ml_project          
 │   ├── data            <- Загрузка и чтение данных
 │   ├── features        <- Предобработка данных
 │   ├── models          <- Интструменты работы с моделью
-│   ├── raw             <- Место сохранения датасета для обучения
 │   ├── predict.py      <- Получение предсказаний на основе обученной модели
 │   └── train.py        <- Обучение модели
 ├── notebooks           <- Разведочный анализ данных

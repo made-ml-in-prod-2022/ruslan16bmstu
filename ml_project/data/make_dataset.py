@@ -2,7 +2,7 @@ from typing import Tuple
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-from data.read_params import SplittingParams, DownloadParams
+from ml_project.data.read_params import SplittingParams, DownloadParams
 
 
 def download_data(params: DownloadParams):

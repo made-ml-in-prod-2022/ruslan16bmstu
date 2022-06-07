@@ -3,13 +3,10 @@ import os
 import pandas as pd
 from faker_generator import gen_fake_dataset
 
-import sys
-sys.path.append("./ml_project")
 
-
-from train import train
-from features import extract_target, build_transformer
-from data.read_params import (
+from ml_project.train import train
+from ml_project.features import extract_target, build_transformer
+from ml_project.data.read_params import (
     FeatureParams,
     TrainingParams,
     DownloadParams,
@@ -46,8 +43,8 @@ def training_params():
 
 
 @pytest.fixture()
-def download_params():
-    return DownloadParams(url="_", file_path="tests/artifacts/dataset.csv")
+def download_params(tmp_path_factory):
+    return DownloadParams(url="_", file_path=tmp_path_factory.getbasetemp() / "dataset.csv")
 
 
 @pytest.fixture()
@@ -68,11 +65,11 @@ def transformed_dataset(dataset_without_target, feature_params) -> pd.DataFrame:
 
 @pytest.fixture()
 def training_pipeline_params(
-    splitting_params, feature_params, training_params, download_params
+    tmp_path_factory, splitting_params, feature_params, training_params, download_params
 ):
     return TrainingPipelineParams(
-        metrics_path="tests/artifacts/report.json",
-        output_model_path="tests/artifacts/model.pkl",
+        metrics_path=tmp_path_factory.getbasetemp() / "report.json",
+        output_model_path=tmp_path_factory.getbasetemp() / "model.pkl",
         splitting_params=splitting_params,
         feature_params=feature_params,
         model=training_params,

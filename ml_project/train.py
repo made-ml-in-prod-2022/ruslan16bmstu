@@ -4,10 +4,10 @@ import json
 import hydra
 from omegaconf import OmegaConf
 
-from data.read_params import read_training_pipeline_params, TrainingPipelineParams
-from data.make_dataset import download_data, read_data, split_data
-from features.build_features import build_transformer, extract_target
-from models.model_tools import (
+from ml_project.data.read_params import read_training_pipeline_params, TrainingPipelineParams
+from ml_project.data.make_dataset import download_data, read_data, split_data
+from ml_project.features.build_features import build_transformer, extract_target
+from ml_project.models.model_tools import (
     create_pipline,
     train_model,
     predict_model,

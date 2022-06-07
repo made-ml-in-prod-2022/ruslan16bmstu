@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.preprocessing import MinMaxScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 
-from data.read_params import FeatureParams
+from ml_project.data.read_params import FeatureParams
 
 
 def build_transformer(params: FeatureParams) -> ColumnTransformer:

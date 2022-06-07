@@ -1,9 +1,7 @@
 import os
-import sys
-sys.path.append("./ml_project")
 
 
-from train import train
+from ml_project.train import train
 
 
 def test_train(dataset, training_pipeline_params):

@@ -1,8 +1,4 @@
-import sys
-sys.path.append("./ml_project")
-
-
-from data import split_data
+from ml_project.data import split_data
 
 
 def test_splitting(dataset, splitting_params):

@@ -2,8 +2,8 @@ import logging
 import sys
 import click
 
-from data.make_dataset import read_data
-from models.model_tools import save_predict, read_model
+from ml_project.data.make_dataset import read_data
+from ml_project.models.model_tools import save_predict, read_model
 
 log = logging.getLogger(__name__)
 handler = logging.StreamHandler(sys.stdout)

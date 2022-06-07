@@ -8,7 +8,7 @@ from sklearn.metrics import recall_score, precision_score, f1_score, accuracy_sc
 from sklearn.pipeline import Pipeline
 import pickle
 
-from data.read_params import TrainingParams
+from ml_project.data.read_params import TrainingParams
 
 SklearnClassifierModel = Union[GradientBoostingClassifier, LogisticRegression]
 
