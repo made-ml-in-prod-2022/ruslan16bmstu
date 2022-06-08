@@ -15,12 +15,14 @@ def predict(model_path: str, features_path: str, prediction_path: str):
 
     log.info(msg="reading model")
     model = read_model(model_path)
+    log.info(msg=f"model: {model.named_steps['model']}")
 
     log.info(msg="reading features")
     df = read_data(features_path)
 
     if "condition" in df.columns:
         df = df.drop(labels="condition", axis=1)
+    log.info(msg=f"features shape: {df.shape}")
 
     log.info(msg="start prediction")
     y_pred = model.predict(df)

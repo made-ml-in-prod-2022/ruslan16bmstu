@@ -1,7 +1,11 @@
 import numpy as np
 
 
-from ml_project.features.build_features import build_transformer, extract_target, extract_features
+from ml_project.features.build_features import (
+    build_transformer,
+    extract_target,
+    extract_features,
+)
 
 
 def test_extract_target(dataset, feature_params):

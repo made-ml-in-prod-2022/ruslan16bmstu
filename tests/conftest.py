@@ -44,7 +44,9 @@ def training_params():
 
 @pytest.fixture()
 def download_params(tmp_path_factory):
-    return DownloadParams(url="_", file_path=tmp_path_factory.getbasetemp() / "dataset.csv")
+    return DownloadParams(
+        url="_", file_path=tmp_path_factory.getbasetemp() / "dataset.csv"
+    )
 
 
 @pytest.fixture()

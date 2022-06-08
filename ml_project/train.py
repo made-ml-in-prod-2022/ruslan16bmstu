@@ -4,7 +4,10 @@ import json
 import hydra
 from omegaconf import OmegaConf
 
-from ml_project.data.read_params import read_training_pipeline_params, TrainingPipelineParams
+from ml_project.data.read_params import (
+    read_training_pipeline_params,
+    TrainingPipelineParams,
+)
 from ml_project.data.make_dataset import download_data, read_data, split_data
 from ml_project.features.build_features import build_transformer, extract_target
 from ml_project.models.model_tools import (
@@ -24,6 +27,7 @@ def train(configs: TrainingPipelineParams):
     if not os.path.exists(configs.downloading_params.file_path):
         download_data(configs.downloading_params)
     df = read_data(configs.downloading_params.file_path)
+    log.info(msg=f"dataset shape: {df.shape}")
 
     log.info(msg="splitting dataset")
     df_train, df_test = split_data(
@@ -45,6 +49,7 @@ def train(configs: TrainingPipelineParams):
     model = train_model(X_train, y_train, configs.model)
 
     log.info(msg="creating pipeline")
+    log.info(msg=f"model: {model}")
     pipe = create_pipline(model, transformer)
     y_pred = predict_model(pipe, df_test)
 

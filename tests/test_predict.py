@@ -4,7 +4,9 @@ import os
 from ml_project.predict import predict
 
 
-def test_predict(tmp_path_factory, dummy_pipeline, training_pipeline_params, dataset_without_target):
+def test_predict(
+    tmp_path_factory, dummy_pipeline, training_pipeline_params, dataset_without_target
+):
     dummy_pipeline
     features_path = tmp_path_factory.getbasetemp() / "features.csv"
     prediction_path = tmp_path_factory.getbasetemp() / "prediction.txt"
