@@ -11,7 +11,7 @@ x-environment: &airflow_environment
   - AIRFLOW__CORE__FERNET_KEY=${FERNET_KEY}
   - AIRFLOW_CONN_FS_CONN=fs://admin:admin@localhost:8080/schema?path=/opt/airflow/data
   - AIRFLOW_VAR_MODEL_PATH=${MODEL_PATH}
-
+  - AIRFLOW_VAR_MOUNT_DIR=/home/ruslan16/ml_in_prod/ruslan16bmstu/airflow_ml_dags/data
 
 x-airflow-image: &airflow_image apache/airflow:2.3.0-python3.8
 # ====================================== /AIRFLOW ENVIRONMENT VARIABLES ======================================

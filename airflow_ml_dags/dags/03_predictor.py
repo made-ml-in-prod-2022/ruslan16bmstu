@@ -3,12 +3,16 @@ from airflow import DAG
 from airflow.providers.docker.operators.docker import DockerOperator
 from docker.types import Mount
 from airflow.utils.dates import days_ago
+from airflow.models import Variable
+
+
+mount_dir = Variable.get("MOUNT_DIR")
 
 default_args = {
     "owner": "airflow",
     "email": ["airflow@example.com"],
     "retries": 1,
-    "retry_delay": timedelta(minutes=60),
+    "retry_delay": timedelta(minutes=5),
 }
 
 with DAG(
@@ -26,7 +30,7 @@ with DAG(
         network_mode="bridge",
         mounts=[
             Mount(
-                source="/home/ruslan16/ml_in_prod/ruslan16bmstu/airflow_ml_dags/data",
+                source=mount_dir,
                 target="/data",
                 type="bind",
             )
