@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: online-inference
+  labels:
+    app: online-inference
+spec:
+  containers:
+    - name: online-inference
+      image: ruslan16/ml_in_prod_2022:latest
+      ports:
+        -  containerPort: 8080
