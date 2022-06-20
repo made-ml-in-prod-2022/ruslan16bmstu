@@ -14,6 +14,18 @@ spec:
         limits:
           memory: "1G"
           cpu: "1"
-      image: ruslan16/ml_in_prod_2022:v1
+      image: ruslan16/ml_in_prod_2022:v2
       ports:
       - containerPort: 8000
+      livenessProbe:
+        httpGet:
+          path: /healz
+          port: 8000
+        initialDelaySeconds: 10
+        periodSeconds: 5
+      readinessProbe:
+        httpGet:
+          path: /healz
+          port: 8000
+        initialDelaySeconds: 10
+        periodSeconds: 5
