@@ -6,3 +6,5 @@ __pycache__
 .hydra
 *.txt
 !requirements.txt
+!k8s/online_inference/model_object/model.pkl
+!k8s/online_inference/sample_data/features.csv
