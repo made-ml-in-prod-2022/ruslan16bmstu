@@ -1,6 +1,8 @@
 __pycache__
 *.csv
 *.pkl
+!airflow_ml_dags/data/models/selected/model.pkl
 *.json
 .hydra
 *.txt
+!requirements.txt
