@@ -1,2 +1,31 @@
-# ruslan16bmstu
-homework for the course "ML in prod"
+# Домашнее задание по курсу "ML в продакшене"
+## Использование
+### Обучение модели
+```
+python3 -m ml_project.train                — по умолчанию обучается логистическая регрессия            
+python3 -m ml_project.train model=busting  — обучить градиентный бустинг
+python3 -m ml_project.train model=logreg   — обучить логистическую регрессию
+```
+### Получение предсказаний
+```
+python3 -m ml_project.predict artifacts/model.pkl <features path> <prediction path>
+```
+## Структура проекта
+```
+├── artifacts           <- Место сохранения обученной модели
+├── raw                 <- Место сохранения датасета для обучения 
+├── configs             <- Конфигурационные файлы
+├── ml_project          
+│   ├── data            <- Загрузка и чтение данных
+│   ├── features        <- Предобработка данных
+│   ├── models          <- Интструменты работы с моделью
+│   ├── predict.py      <- Получение предсказаний на основе обученной модели
+│   └── train.py        <- Обучение модели
+├── notebooks           <- Разведочный анализ данных
+├── outputs             <- Предсказанные метки
+├── reports             <- Метрики
+├── requirements.txt    <- Зависимости
+└── tests               <- Тесты
+```
+## Описание проекта
+В проекте реализована модель обнаружения заболевания сердца. Модель обучена на датасете [Heart Disease Cleveland UCI](https://www.kaggle.com/datasets/cherngs/heart-disease-cleveland-uci). Доступно две конфигурации для обучения: логистическая регрессия и градиентный бустинг. Для классификации, оценки результатов, разделения и трансформации данных использовалась боблиотека [sklearn](https://scikit-learn.org/stable/index.html).
