@@ -1,5 +1,0 @@
-model_type: LogisticRegression
-params: 
-    0: 0.3
-    1: 0.7
-random_state: 42
